@@ -1,0 +1,46 @@
+{"pizzas": [{
+    "id": "1",
+    "nome": "Quatro Queijos",
+    "preco": 30.0
+},
+{
+    "id": "2",
+    "nome": "Frango com Catupiry",
+    "preco": 35.0
+},
+{
+    "id": "3",
+    "nome": "Atum com queijo",
+    "preco": 40.0
+},
+{
+    "id": "4",
+    "nome": "Presunto Parma",
+    "preco": 80.0
+},
+{
+    "id": "5",
+    "nome": "Brigadeiro",
+    "preco": 27.0
+},
+{
+    "id": "6",
+    "nome": "Banana com Doce de Leite",
+    "preco": 40.0
+}],
+"bebidas":[{
+        "id": "10",
+        "nome": "Coca-Cola",
+        "preco": 5.0
+        },
+        {
+        "id": "20",
+        "nome": "Suco de Uva",
+        "preco": 10.0
+        },
+        {
+        "id": "30",
+        "nome": "Água",
+        "preco": 4.0
+        } 
+]}
