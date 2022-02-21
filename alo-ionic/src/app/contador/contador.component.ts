@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ContadorComponent implements OnInit {
 
   numero:number = 0;
+  novoNumero:number = 0;
 
   constructor() { }
 
@@ -17,6 +18,11 @@ export class ContadorComponent implements OnInit {
    
     this.numero++;
 
+  }
+
+  atualizarNumero() {
+    this.numero = this.novoNumero;
+    this.novoNumero = 0;
   }
 
 }

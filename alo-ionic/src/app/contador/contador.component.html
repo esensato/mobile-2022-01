@@ -1,5 +1,36 @@
+<ion-grid>
 
-<p>{{numero}}</p>
-<p>
-  <ion-button (click)="executarIncremento()">Incrementar</ion-button>
-</p>
+<ion-row>
+
+  <ion-col size="12" justify-content="center">
+    {{numero}}
+  </ion-col>
+
+</ion-row>
+
+<ion-row>
+
+  <ion-col>
+      <ion-button (click)="executarIncremento()">Incrementar</ion-button>
+  </ion-col>
+
+</ion-row>
+
+
+<ion-row>
+
+  <ion-item>
+    <ion-label>Valor:</ion-label>
+    <ion-input  [(ngModel)]="novoNumero"></ion-input>
+    <ion-button (click)="atualizarNumero()">
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-row>
+</ion-grid>
+
+
+
+
+
+
