@@ -11,7 +11,7 @@
     <ion-label>Selecione a pizza</ion-label>
 </ion-header>
 
-<ion-item *ngFor="let p of cardapio.pizzas">
+<ion-item *ngFor="let p of cardapio.pizzas" button (click)="selPizza(p)">
 
     <ion-avatar slot="start">
         <img src="https://raw.githubusercontent.com/esensato/mobile-2022-01/main/img/pizza-{{p.id}}.jpg" />

@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Cardapio } from './cardapio';
 
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'cardapio',
     component: Cardapio
   }
 ];
@@ -14,7 +15,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [Cardapio],
   imports: [
-    CommonModule, RouterModule.forChild(routes)
+    CommonModule, RouterModule.forChild(routes), HttpClientModule
   ],
   exports: [Cardapio]
 })
