@@ -4,19 +4,24 @@ import { Cardapio } from './cardapio';
 
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { Pedido } from './pedido.component';
 
 const routes: Routes = [
   {
     path: 'cardapio',
     component: Cardapio
+  },
+  {
+    path: 'pedido',
+    component: Pedido
   }
 ];
 
 @NgModule({
-  declarations: [Cardapio],
+  declarations: [Cardapio, Pedido],
   imports: [
     CommonModule, RouterModule.forChild(routes), HttpClientModule
   ],
-  exports: [Cardapio]
+  exports: [Cardapio, Pedido]
 })
 export class PizzariaModule { }
