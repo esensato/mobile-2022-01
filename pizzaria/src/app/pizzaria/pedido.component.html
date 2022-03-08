@@ -19,6 +19,30 @@
 
       <ion-card-content>
 
+        <ion-item>{{pizzaSelecionada.nome}} - R$ {{pizzaSelecionada.preco}}</ion-item>
+        <ion-item>
+          <div style="padding-right: 20px;">{{bebidaSelecionada.nome}} - R$ {{bebidaSelecionada.preco}}</div>
+          <div><ion-input type="number" size="2" value="1" (ionChange)="recalcular($event.target.value)"
+          value={{quantidade}}></ion-input></div>
+          </ion-item>
+
+          <ion-item>
+            <div style="padding-right: 5px;">
+              <ion-checkbox (ionChange)="queijoExtra($event.target)"></ion-checkbox></div><div>Queijo Extra</div>
+            </ion-item>
+
+            <ion-item>
+              <div style="padding-right: 5px;"><ion-icon name="cash-outline"></ion-icon></div>
+              <div>Total: R$ {{total}}</div>
+              </ion-item>
+
+              <ion-item>
+                <div style="padding-right: 5px;">Nome:</div>
+                <div><ion-input name="nome" ngDefaultControl [(ngModel)]=nome></ion-input></div>
+                <div><ion-button (click)="enviar()">
+                <ion-icon name="checkmark-outline"></ion-icon>
+                </ion-button></div>
+                </ion-item>
 
       </ion-card-content>
 
