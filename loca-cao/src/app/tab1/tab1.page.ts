@@ -23,6 +23,20 @@ export class Tab1Page {
       const pos = new google.maps.LatLng(param.coords.latitude, param.coords.longitude);
       const opcoes = {center: pos, zoom: 15, disableDefaultUI: true};
       this.mapa = new google.maps.Map(this.refMapa.nativeElement, opcoes)
+
+          // permite o click sobre o mapa para obter a coordenada LatLng
+    this.mapa.addListener("click", (mapsMouseEvent) => {
+
+      var myLatlng = new google.maps.LatLng(mapsMouseEvent.latLng.lat, mapsMouseEvent.latLng.lng);
+
+      let novo = new google.maps.Marker({
+        position: myLatlng,
+        title: "Titulo"
+        });
+        console.log( JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2));
+        novo.setMap(this.mapa);
+
+      })
   
       // adiciona um marcador
       const posESPM = new google.maps.LatLng(param.coords.latitude, param.coords.longitude);
@@ -42,17 +56,7 @@ export class Tab1Page {
       marcador.setMap(this.mapa);
     })
 
-    // permite o click sobre o mapa para obter a coordenada LatLng
-    this.mapa.addListener("click", (mapsMouseEvent) => {
 
-      let novo = new google.maps.Marker({
-        position: mapsMouseEvent.LatLng,
-        title: "ESPM Tech"
-        });
-        console.log( JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2));
-        novo.setMap(this.mapa);
-
-      })
 
   }
 
