@@ -1,11 +1,18 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:ven_carro/lista_veiculo.dart';
 
+var camera;
 
-void main() {
+Future<void> main() async {
   // flutter run --no-sound-null-safety
   runApp(VenCarro());
+
+  WidgetsFlutterBinding.ensureInitialized();
+  final cameras = await availableCameras();
+  camera = cameras.first;
+
 }
 
 class VenCarro extends StatelessWidget {

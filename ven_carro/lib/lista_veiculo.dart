@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:ven_carro/camera.dart';
+import 'package:ven_carro/resumo.dart';
 import 'package:ven_carro/veiculo.dart';
 
 class ListaVeiculo extends StatefulWidget {
@@ -36,7 +38,9 @@ class _ListaVeiculoState extends State<ListaVeiculo> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold(appBar: AppBar(title: const Text('VenCarro')),
+    return MaterialApp(
+      routes: {"/resumo": (context) => Resumo(), "/camera": (context) => Camera()},
+    home: Scaffold(appBar: AppBar(title: const Text('VenCarro')),
     body: ListView.builder(itemCount: veiculos.length, 
                            itemBuilder: (context, idx) {
                               return ListTile(
@@ -100,6 +104,10 @@ class _ListaVeiculoState extends State<ListaVeiculo> {
                                      http.get(Uri.parse(urlPreco)).then((resposta) {
                                       final preco = jsonDecode(resposta.body);
                                           print('${preco}');
+                                          Navigator.of(context).pushNamed("/resumo", arguments: {"marca" : veiculoSelecionado.marca,
+                                          "modelo": veiculoSelecionado.modelo,
+                                          "ano": veiculoSelecionado.ano,
+                                          "preco" : preco['Valor']});
                         
                                 });
 
