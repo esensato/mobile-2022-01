@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Memo Colors</string>
+    <string name="lblIniciar">Iniciar</string>
+    <string name="lblErroDialog">Seqüência errada!</string>
+    <string name="lblCorretoDialog">Seqüência Correta!</string>
+    <string name="lblNivel">Nível</string>
+</resources>
